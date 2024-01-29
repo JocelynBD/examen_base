@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tabla de Datos</title>
+    <title>Registro de Datos</title>
     <!-- Agregar Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
-        /* Estilos personalizados */
         body {
             background-color: #f8f9fa;
         }
@@ -17,33 +16,33 @@
             margin-top: 50px;
         }
 
-        /* Estilos para la tabla de información de la API */
-        table.info-table {
+        .info-table {
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: #212529;
-            background-color: #f8f9fa;
-            border-collapse: collapse;
-        }
-
-        table.info-table th,
-        table.info-table td {
-            padding: 10px;
-            text-align: center;
+            background-color: #ffffff;
             border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        table.info-table th {
-            background-color: #300808;
+        .info-table th,
+        .info-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .info-table th {
+            background-color: #007bff;
             color: #ffffff;
         }
 
-        table.info-table tbody tr:hover {
+        .info-table tbody tr:hover {
             background-color: rgba(0, 123, 255, 0.1);
         }
 
-        /* Estilos para el formulario */
-        form {
+        .form-container {
             max-width: 400px;
             margin: auto;
             background-color: #ffffff;
@@ -52,30 +51,36 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        form label {
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
+        .form-container h4 {
+            text-align: center;
+            color: #007bff;
         }
 
-        /* Estilos para la tabla de registros */
-        table.records-table {
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .records-table {
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
-        }
-
-        table.records-table th {
-            background-color: #300808;
-            color: #ffffff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        table.records-table td {
-            padding: 10px;
-            text-align: center;
             border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .records-table th {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .records-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
         }
 
     </style>
@@ -104,28 +109,27 @@
         </table>
 
         <!-- Formulario -->
-        <form id="miFormulario">
+        <div class="form-container">
             <h4>Ingresa el dato:</h4>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="enviarFormulario()">Enviar</button>
-        </form>
+            <form id="miFormulario">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="enviarFormulario()">Enviar</button>
+            </form>
+        </div>
 
         <!-- Tabla de Registros -->
-        <div class="mt-4">
-            <h4>Registro:</h4>
-            <table class="table records-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaDatos">
-                </tbody>
-            </table>
-        </div>
+        <table class="table records-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody id="tablaDatos">
+            </tbody>
+        </table>
     </div>
 
     <!-- Agregar Bootstrap JS y dependencias -->
