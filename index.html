@@ -32,33 +32,35 @@
         tbody tr:hover {
             background-color: rgba(0, 123, 255, 0.1);
         }
+
+        /* Estilos para el formulario */
+        .container {
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para la tabla de datos ingresados */
+        #tablaDatos {
+            margin-top: 20px;
+        }
+
+        #tablaDatos th,
+        #tablaDatos td {
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Información de la API -->
-    <!-- Tabla Bootstrap -->
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>IP</th>
-                <th>PAÍS</th>
-                <th>CONTINENTE</th>
-                <th>ZONA HORARIA</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Datos de muestra -->
-            <tr>
-                <td id="ip">-</td>
-                <td id="pais">-</td>
-                <td id="continente">-</td>
-                <td id="zona_horaria">-</td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
-    <div class="container mt-5">
+    <div class="container">
         <!-- Formulario -->
         <form id="miFormulario">
             <div class="form-group">
@@ -95,7 +97,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>
