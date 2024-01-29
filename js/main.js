@@ -1,9 +1,21 @@
-// Variables para los elementos del DOM
+/// Variables para los elementos del DOM
 let ip = document.getElementById("ip");
 let pais = document.getElementById("pais");
 let continente = document.getElementById("continente");
 let zona_horaria = document.getElementById("zona_horaria");
 let tablaDatos = document.getElementById("tablaDatos");
+
+// Función para enviar los datos a la base de datos
+function enviarDatosABaseDeDatos(datos) {
+  axios.post("https://tu-servidor.com/guardar-datos.php", datos)
+    .then(function (response) {
+      console.log('Datos guardados en la base de datos:', response.data);
+    })
+    .catch(function (error) {
+      console.error('Error al guardar datos en la base de datos:', error);
+    });
+}
+
 // Función para enviar el formulario con Axios y agregar a la tabla
 function enviarFormulario() {
   var nombre = document.getElementById('nombre').value;
@@ -19,13 +31,19 @@ function enviarFormulario() {
       nombre: nombre
     }
   };
+  
   // Agregar a la tabla
   var fila = `<tr><td>${nombre}</td></tr>`;
   tablaDatos.innerHTML += fila;
+
   // Imprimir datos en la consola
-  console.log('Datos:', JSON.stringify(datos));
+  console.log('Datos a enviar:', JSON.stringify(datos));
+
+  // Enviar datos a la base de datos
+  enviarDatosABaseDeDatos(datos);
 }
-// Función para hacer la solicitud a la API
+
+// Función para hacer la solicitud a la API de geolocalización
 const SolicitudAPI = () => {
   axios.get("https://itp-examen26.000webhostapp.com/php-geoip-api/index.php")
     .then(function (response) {
@@ -50,6 +68,4 @@ window.addEventListener('load', function () {
   SolicitudAPI();
   // Puedes agregar más acciones después de cargar la página si es necesario
 });
-
-
 
