@@ -8,7 +8,6 @@ let tablaDatos = document.getElementById("tablaDatos");
 // Función para enviar el formulario con Axios y agregar a la tabla
 function enviarFormulario() {
   var nombre = document.getElementById('nombre').value;
-  var moneda = document.getElementById('moneda').value;
   var datos = {
     formulario: {
       nombre: nombre,
@@ -23,7 +22,7 @@ function enviarFormulario() {
   };
 
   // Agregar a la tabla
-  var fila = `<tr><td>${nombre}</td><td>${moneda}</td></tr>`;
+  var fila = `<tr><td>${nombre}</td></tr>`;
   tablaDatos.innerHTML += fila;
 
   // Imprimir datos en la consola
