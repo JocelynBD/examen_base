@@ -7,7 +7,7 @@ let tablaDatos = document.getElementById("tablaDatos");
 
 // Función para enviar los datos a la base de datos
 function enviarDatosABaseDeDatos(datos) {
-  axios.post("https://tu-servidor.com/guardar-datos.php", datos)
+  axios.post("https://itp-examen26.000webhostapp.com/php-geoip-api/index.php", datos)
     .then(function (response) {
       console.log('Datos guardados en la base de datos:', response.data);
     })
