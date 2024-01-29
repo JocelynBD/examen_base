@@ -8,8 +8,8 @@
     <!-- Agregar Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
-        /* Estilos personalizados para la tabla de la API */
-        table.api-table {
+        /* Estilos personalizados para la tabla */
+        table {
             width: 100%;
             margin-bottom: 1rem;
             color: #212529;
@@ -17,71 +17,47 @@
             border-collapse: collapse;
         }
 
-        th.api-header,
-        td.api-cell {
+        th,
+        td {
             padding: 0.75rem;
             text-align: center;
             border: 1px solid #dee2e6;
         }
 
-        th.api-header {
-            background-color: #ff9100;
+        th {
+            background-color: #300808;
             color: #ffffff;
         }
 
-        tbody.api-row:hover {
-            background-color: rgba(225, 0, 255, 0.1);
-        }
-
-        /* Estilos personalizados para el formulario y la tabla de datos ingresados */
-        .container {
-            margin-top: 50px;
-        }
-
-        form#miFormulario {
-            max-width: 400px;
-            margin: auto;
-        }
-
-        form#miFormulario .form-group {
-            margin-bottom: 20px;
-        }
-
-        #tablaDatos {
-            margin-top: 20px;
-        }
-
-        #tablaDatos th,
-        #tablaDatos td {
-            text-align: center;
+        tbody tr:hover {
+            background-color: rgba(0, 123, 255, 0.1);
         }
     </style>
 </head>
 
 <body>
     <!-- Información de la API -->
-    <!-- Tabla Bootstrap para la API -->
-    <table class="table api-table table-bordered">
+    <!-- Tabla Bootstrap -->
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th class="api-header">IP</th>
-                <th class="api-header">PAÍS</th>
-                <th class="api-header">CONTINENTE</th>
-                <th class="api-header">ZONA HORARIA</th>
+                <th>IP</th>
+                <th>PAÍS</th>
+                <th>CONTINENTE</th>
+                <th>ZONA HORARIA</th>
             </tr>
         </thead>
-        <tbody class="api-row">
+        <tbody>
             <!-- Datos de muestra -->
             <tr>
-                <td class="api-cell" id="ip">-</td>
-                <td class="api-cell" id="pais">-</td>
-                <td class="api-cell" id="continente">-</td>
-                <td class="api-cell" id="zona_horaria">-</td>
+                <td id="ip">-</td>
+                <td id="pais">-</td>
+                <td id="continente">-</td>
+                <td id="zona_horaria">-</td>
             </tr>
         </tbody>
     </table>
-
-    <!-- Formulario y tabla de datos ingresados -->
+    </div>
     <div class="container mt-5">
         <!-- Formulario -->
         <form id="miFormulario">
@@ -99,15 +75,14 @@
         <!-- Tabla para mostrar los datos ingresados -->
         <div class="mt-4">
             <h4>Datos Ingresados:</h4>
-            <table class="table" id="tablaDatos">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Nombre</th>
                         <th>Moneda</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- Aquí se mostrarán los datos ingresados dinámicamente -->
+                <tbody id="tablaDatos">
                 </tbody>
             </table>
         </div>
@@ -120,6 +95,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
