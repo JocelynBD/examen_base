@@ -11,7 +11,6 @@ function enviarFormulario() {
   var datos = {
     formulario: {
       nombre: nombre,
-      moneda: moneda
     },
     api: {
       ip: ip.value,
