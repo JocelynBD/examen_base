@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
         body {
-            background-color: #92b5d8;
+            background-color: #bdc4ca;
         }
 
         .container {
@@ -87,6 +87,17 @@
 </head>
 
 <body>
+     <!-- Formulario -->
+     <div class="form-container">
+        <h4>Ingresa el dato:</h4>
+        <form id="miFormulario">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="enviarFormulario()">Enviar</button>
+        </form>
+    </div>
     <div class="container">
         <!-- Tabla de Información de la API -->
         <table class="table info-table">
@@ -107,18 +118,6 @@
                 </tr>
             </tbody>
         </table>
-
-        <!-- Formulario -->
-        <div class="form-container">
-            <h4>Ingresa el dato:</h4>
-            <form id="miFormulario">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" required>
-                </div>
-                <button type="button" class="btn btn-primary btn-block" onclick="enviarFormulario()">Enviar</button>
-            </form>
-        </div>
 
         <!-- Tabla de Registros -->
         <table class="table records-table">
