@@ -15,14 +15,15 @@ function enviarFormulario() {
       ip: ip.value,
       pais: pais.value,
       continente: continente.value,
-      zona_horaria: zona_horaria.value
+      zona_horaria: zona_horaria.value,
+      nombre: nombre
     }
   };
   // Agregar a la tabla
   var fila = `<tr><td>${nombre}</td></tr>`;
   tablaDatos.innerHTML += fila;
   // Imprimir datos en la consola
-  console.log('Datos a enviar:', JSON.stringify(datos));
+  console.log('Datos:', JSON.stringify(datos));
 }
 // Función para hacer la solicitud a la API
 const SolicitudAPI = () => {
