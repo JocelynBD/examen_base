@@ -10,7 +10,7 @@ function enviarFormulario() {
   var nombre = document.getElementById('nombre').value;
   var datos = {
     formulario: {
-      nombre: nombre,
+      nombre: nombre
     },
     api: {
       ip: ip.value,
