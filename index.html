@@ -5,125 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro de Datos</title>
-    <!-- Agregar Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #bdc4ca;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .info-table {
-            width: 100%;
-            margin-bottom: 30px;
-            color: #212529;
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .info-table th,
-        .info-table td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #dee2e680;
-        }
-
-        .info-table th {
-            background-color: #ff0000;
-            color: #ffffff;
-        }
-
-        .info-table tbody tr:hover {
-            background-color: rgba(81, 255, 0, 0.1);
-        }
-
-        .form-container {
-            max-width: 400px;
-            margin: auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .form-container h4 {
-            text-align: center;
-            color: #ff0000;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .records-table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .records-table th {
-            background-color: #ff0000;
-            color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .records-table td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-    </style>
+    <!-- Agregar Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-     <!-- Formulario -->
-     <div class="form-container">
-        <h4>Ingresa el dato:</h4>
+<body class="bg-gray-200">
+    <!-- Formulario -->
+    <div class="container mx-auto mt-8 p-8 bg-white rounded shadow-md max-w-md">
+        <h4 class="text-center text-red-500 text-2xl mb-4">Ingresa el dato:</h4>
         <form id="miFormulario">
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-700">Nombre:</label>
+                <input type="text" class="form-input mt-1 block w-full" id="nombre" name="nombre" required>
             </div>
-            <button type="button" class="btn btn-primary btn-block" onclick="enviarFormulario()">Enviar</button>
+            <button type="button" class="btn btn-primary w-full" onclick="enviarFormulario()">Enviar</button>
         </form>
     </div>
-    <div class="container">
+
+    <div class="container mx-auto mt-8">
         <!-- Tabla de Información de la API -->
-        <table class="table info-table">
+        <table class="table-auto bg-white rounded shadow-md overflow-hidden">
             <thead>
-                <tr>
-                    <th>IP</th>
-                    <th>PAÍS</th>
-                    <th>CONTINENTE</th>
-                    <th>ZONA HORARIA</th>
+                <tr class="bg-red-500 text-white">
+                    <th class="py-2 px-4">IP</th>
+                    <th class="py-2 px-4">PAÍS</th>
+                    <th class="py-2 px-4">CONTINENTE</th>
+                    <th class="py-2 px-4">ZONA HORARIA</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td id="ip">-</td>
-                    <td id="pais">-</td>
-                    <td id="continente">-</td>
-                    <td id="zona_horaria">-</td>
+                    <td id="ip" class="py-2 px-4">-</td>
+                    <td id="pais" class="py-2 px-4">-</td>
+                    <td id="continente" class="py-2 px-4">-</td>
+                    <td id="zona_horaria" class="py-2 px-4">-</td>
                 </tr>
             </tbody>
         </table>
 
         <!-- Tabla de Registros -->
-        <table class="table records-table">
+        <table class="table-auto bg-white rounded shadow-md mt-4 overflow-hidden">
             <thead>
-                <tr>
-                    <th>Nombre</th>
+                <tr class="bg-red-500 text-white">
+                    <th class="py-2 px-4">Nombre</th>
                 </tr>
             </thead>
             <tbody id="tablaDatos">
