@@ -4,7 +4,6 @@ let pais = document.getElementById("pais");
 let continente = document.getElementById("continente");
 let zona_horaria = document.getElementById("zona_horaria");
 let tablaDatos = document.getElementById("tablaDatos");
-
 // Función para enviar el formulario con Axios y agregar a la tabla
 function enviarFormulario() {
   var nombre = document.getElementById('nombre').value;
@@ -19,15 +18,12 @@ function enviarFormulario() {
       zona_horaria: zona_horaria.value
     }
   };
-
   // Agregar a la tabla
   var fila = `<tr><td>${nombre}</td></tr>`;
   tablaDatos.innerHTML += fila;
-
   // Imprimir datos en la consola
   console.log('Datos a enviar:', JSON.stringify(datos));
 }
-
 // Función para hacer la solicitud a la API
 const SolicitudAPI = () => {
   axios.get("https://itp-examen26.000webhostapp.com/php-geoip-api/index.php")
