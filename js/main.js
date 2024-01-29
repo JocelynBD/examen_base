@@ -28,26 +28,11 @@ function enviarFormulario() {
 
   // Imprimir datos en la consola
   console.log('Datos a enviar:', JSON.stringify(datos));
-
-  // Enviar al servidor centralizado
-  axios.post("https://itp-bdd.000webhostapp.com/Central.php", datos, {
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
-    .then(function (response) {
-      console.log(response.data);
-      // Puedes realizar acciones adicionales después de enviar el formulario al servidor centralizado
-    })
-    .catch(function (error) {
-      console.error(error);
-      // Manejar errores en caso necesario
-    });
 }
 
 // Función para hacer la solicitud a la API
 const SolicitudAPI = () => {
-  axios.get("https://itp-bdd.000webhostapp.com/php-geoip-api/index.php")
+  axios.get("https://itp-examen26.000webhostapp.com/php-geoip-api/index.php")
     .then(function (response) {
       console.log(response.data);
       ip.innerHTML = response.data.ip;
