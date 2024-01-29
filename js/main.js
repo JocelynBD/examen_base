@@ -12,7 +12,7 @@ function enviarDatosABaseDeDatos(datos) {
       console.log('Datos guardados en la base de datos:', response.data);
     })
     .catch(function (error) {
-      console.error('Error al guardar datos en la base de datos:', error);
+      console.error(error);
     });
 }
 
